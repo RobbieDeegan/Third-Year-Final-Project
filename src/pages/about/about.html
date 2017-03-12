@@ -1,11 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Add Details
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Goals:</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Assists:</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Minutes:</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Yellow Cards:</ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Red Cards:</ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button>Add Stats</button>
 
 </ion-content>
