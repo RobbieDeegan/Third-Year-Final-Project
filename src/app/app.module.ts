@@ -17,7 +17,7 @@ import  { IonicStorageModule } from '@ionic/storage'; // setup for the mysqlite 
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot() // setup for the mysqlite storage
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
