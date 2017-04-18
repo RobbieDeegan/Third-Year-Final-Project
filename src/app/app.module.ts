@@ -11,7 +11,6 @@ import  { IonicStorageModule } from '@ionic/storage'; // setup for the mysqlite 
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage
   ],
@@ -23,10 +22,9 @@ import  { IonicStorageModule } from '@ionic/storage'; // setup for the mysqlite 
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Storage, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
