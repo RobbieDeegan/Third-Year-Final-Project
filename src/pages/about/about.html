@@ -1,40 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Add Details
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>List of Matches and Training Sessions</ion-title>
+        <ion-buttons end>
+            <button (click)="add()"><ion-icon name="add"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-
-  <ion-list>
-    <ion-item>
-      <ion-label fixed>Goals:</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>Assists:</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>Minutes:</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Yellow Cards:</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Red Cards:</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
-    </ion-item>
-  </ion-list>
-
-  <button ion-button (click)="add()">Add Stats</button>
-
+ 
+<ion-content class="football">
+    <ion-list>
+        <ion-item-sliding *ngFor="let todo of football; let i = index">
+            <ion-item>
+                <h2>{{ football }}</h2>
+            </ion-item>
+            <ion-item-options>
+                <button danger (click)="delete(i)">
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>

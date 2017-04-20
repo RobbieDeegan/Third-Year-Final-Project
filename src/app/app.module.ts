@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import  { IonicStorageModule } from '@ionic/storage'; // setup for the mysqlite storage
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import  { IonicStorageModule } from '@ionic/storage'; // setup for the mysqlite 
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

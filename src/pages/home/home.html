@@ -1,65 +1,17 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Season Stats</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Add a New Match or Training Session</ion-title>
+        <ion-buttons end>
+            <button (click)="save()"><ion-icon name="checkmark"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-
-  <ion-content>
-
-    <ion-card>
-    <ion-card-header>
-      Games:
-    </ion-card-header>
-    <ion-card-content>
-      {{games}}
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Goals:
-    </ion-card-header>
-    <ion-card-content>
-      {{goals}}
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Assists:
-    </ion-card-header>
-    <ion-card-content>
-      {{assists}}
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Minutes:
-    </ion-card-header>
-    <ion-card-content>
-       {{minutes}}
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Yellow Cards:
-    </ion-card-header>
-    <ion-card-content>
-       {{yellow}}
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      Red Cards:
-    </ion-card-header>
-    <ion-card-content>
-       {{red}}
-    </ion-card-content>
-  </ion-card>
-  
+ 
+<ion-content class="add">
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Football</ion-label>
+            <ion-input type="text" [(ngModel)]="footballItem"></ion-input>
+        </ion-item>
+    </ion-list>
 </ion-content>

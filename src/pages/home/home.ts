@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { SQLite } from "ionic-native";
 
 @Component({
   selector: 'page-home',
@@ -9,40 +8,23 @@ import { SQLite } from "ionic-native";
 })
 export class HomePage {
 
-    public database: SQLite;
-    public stats: Array<Object>;
+    public footballList: Array<string>;
+    public footballItem: string;
  
-    constructor(private navController: NavController, private platform: Platform, storage: Storage) {
-
-        this.platform.ready().then(() => {  
-            this.database = new SQLite();
-            this.database.openDatabase({name: "stats.db", location: "default"}).then(() => {
-                this.refresh();
-            }, (error) => {
-                console.log("ERROR: ", error);
-            });
-        });
-    }
-
-    public add() {
-        this.database.executeSql("INSERT INTO stats (goals, assits) VALUES (?, ?, ?, ?, ?, ?)", []).then((data) => {
-            console.log("INSERTED: " + JSON.stringify(data));
-        }, (error) => {
-            console.log("ERROR: " + JSON.stringify(error.err));
-        });
+    constructor(private nav: NavController) {
+        this.footballList = JSON.parse(localStorage.getItem("football"));
+        if(!this.footballList) {
+            this.footballList = [];
+        }
+        this.footballItem = "";
     }
  
-    public refresh() {
-        this.database.executeSql("SELECT * FROM stats", []).then((data) => {
-            this.stats = [];
-            if(data.rows.length > 0) {
-                for(var i = 0; i < data.rows.length; i++) {
-                    this.stats.push({goals: data.rows.item(i).goals, assists: data.rows.item(i).assists});
-                }
-            }
-        }, (error) => {
-            console.log("ERROR: " + JSON.stringify(error));
-        });
+    save() {
+        if(this.footballItem != "") {
+            this.footballList.push(this.footballItem);
+            localStorage.setItem("football", JSON.stringify(this.footballList));
+            this.nav.pop();
+        }
     }
-
+ 
 }
