@@ -1,15 +1,15 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>List of Matches and Training Sessions</ion-title>
+        <ion-title>Ionic 2 Example - List</ion-title>
         <ion-buttons end>
             <button (click)="add()"><ion-icon name="add"></ion-icon></button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
  
-<ion-content class="football">
+<ion-content class="about">
     <ion-list>
-        <ion-item-sliding *ngFor="let todo of football; let i = index">
+        <ion-item-sliding *ngFor="let football of footballList; let i = index">
             <ion-item>
                 <h2>{{ football }}</h2>
             </ion-item>
