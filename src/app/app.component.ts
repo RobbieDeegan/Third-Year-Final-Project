@@ -1,7 +1,7 @@
 import { Platform} from 'ionic-angular';
 import { Component } from '@angular/core';
-import {StatusBar} from 'ionic-native';
-import {AboutPage} from '../pages/about/about';
+import { StatusBar } from 'ionic-native';
+import { AboutPage } from '../pages/about/about';
  
 @Component({
   templateUrl: 'app.html'

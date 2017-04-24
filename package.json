@@ -1,6 +1,6 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
+  "name": "sports-diary",
+  "author": "Robert Deegan",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -47,5 +47,5 @@
       "locator": "ios"
     }
   ],
-  "description": "FinalProject: An Ionic project"
+  "description": "An Android appliaction to store your sporting events"
 }

@@ -1,22 +1,26 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Ionic 2 Example - List</ion-title>
+        <ion-title>Upcoming Matches & Trainings</ion-title>
+        <!-- Button to add new event to the list -->
         <ion-buttons end>
-            <button (click)="add()"><ion-icon name="add"></ion-icon></button>
+            <button ion-button (click)="add()">ADD</button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
  
 <ion-content class="about">
+    <!-- Code to display the contents of the list -->
     <ion-list>
         <ion-item-sliding *ngFor="let football of footballList; let i = index">
             <ion-item>
                 <h2>{{ football }}</h2>
             </ion-item>
+
+            <!-- Code to delete a content of the list by sliding the item-->
             <ion-item-options>
                 <button danger (click)="delete(i)">
                     <ion-icon name="trash"></ion-icon>
-                    Delete
+                    Delete Event
                 </button>
             </ion-item-options>
         </ion-item-sliding>

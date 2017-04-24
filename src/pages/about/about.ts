@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { HomePage } from "../home/home";
 
 @Component({
@@ -12,18 +12,20 @@ export class AboutPage {
  
     constructor(private nav: NavController) { }
  
-    onPageDidEnter() {
+    pageLoaded() {
         this.footballList = JSON.parse(localStorage.getItem("football"));
         if(!this.footballList) {
             this.footballList = [];
         }
     }
  
+    // Deleting items function
     delete(index: number) {
         this.footballList.splice(index, 1);
         localStorage.setItem("football", JSON.stringify(this.footballList));
     }
  
+    // Adding items function - Redirect to the HomePage
     add() {
         this.nav.push(HomePage);
     }

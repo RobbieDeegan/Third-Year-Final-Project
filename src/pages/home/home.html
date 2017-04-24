@@ -1,17 +1,21 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Ionic 2 Example - Create</ion-title>
-        <ion-buttons end>
-            <button (click)="save()"><ion-icon name="checkmark"></ion-icon></button>
-        </ion-buttons>
+        <ion-title>Add new Match or Training</ion-title>
     </ion-navbar>
 </ion-header>
  
 <ion-content class="add">
     <ion-list>
+        <!-- Input code for adding a new event to the list -->
         <ion-item>
-            <ion-label floating>Football Item</ion-label>
+            <ion-label floating>Add a new Event</ion-label>
             <ion-input type="text" [(ngModel)]="footballItem"></ion-input>
         </ion-item>
     </ion-list>
+
+    <!-- A centered button to call the save function from home.ts -->
+    <div text-center>
+        <button ion-button (click)="save()">Add to your list</button>
+    </div>
 </ion-content>
+
